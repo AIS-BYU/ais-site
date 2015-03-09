@@ -26,7 +26,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -36,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,10 +56,15 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+# Developement configuration - NOT PRD READY
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aisdata',
+        'USER': 'aisuser', #development user
+        'PASSWORD': 'a!sd4ta', #development password
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -81,3 +86,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = ''.join([BASE_DIR, '/static/'])
+STATICFILES_DIRS = (
+    #nothing
+)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/media/'
