@@ -4,7 +4,7 @@
 body {
   background: url(../img/page-background.png);
 }
-.logo-wrapper {
+.logo-wrapper img {
   max-height: 35px;
 }
 .section {
