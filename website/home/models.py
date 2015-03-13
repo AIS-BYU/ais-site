@@ -2,9 +2,10 @@ from django.db import models
 
 # Create your models here.
 class Sponsor(models.Model):
-    company_name = models.TextField(max_length=150, blank=False, null=False)
+    name = models.TextField(max_length=150, blank=False, null=False)
     website = models.URLField()
+    description = models.TextField(max_length=500, blank=True, null=True)
     logo_image = models.FileField(upload_to='sponsor/')
 
     def __str__(self):
-        return self.company_name
+        return self.name
