@@ -6,7 +6,7 @@
         <div id="sequence">
             <ul class="sequence-canvas">
                 {% for item in events.items %}
-                    <li class="bg1">
+                    <li class="bg{{ forloop.counter }}">
                         <!-- Slide Title -->
                         <h2 class="title">{{ item.object.attachments.0.displayName }}</h2>
                         <!-- Slide Text -->
