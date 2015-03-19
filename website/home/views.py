@@ -9,8 +9,6 @@ import json
 def index(request):
     r = requests.get('https://www.googleapis.com/plus/v1/people/111490187039594096525/activities/public?key=AIzaSyCsZyECtnoQw2xKqlBWRs13v0_DUrC5Q5I&maxResults=3')
 
-    print(json.dumps(r.json(), indent=4, sort_keys=True))
-
     return render_to_response('index.html', {'events': r.json()})
 
 def about(request):
