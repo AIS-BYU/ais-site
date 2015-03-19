@@ -18,3 +18,6 @@ def sponsors(request):
     sponsors = Sponsor.objects.all().order_by('name')
 
     return render_to_response('sponsor.html', {'sponsors': sponsors})
+
+def calendar(request):
+    return render_to_response('calendar.html')
