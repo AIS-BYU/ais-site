@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Events</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="events-list">
+                    {% for event in events.items %}
+                    <tr>
+                        <td>
+                            <div class="event-date">
+                                <div class="event-day">16</div>
+                                <div class="event-month">MAR</div>
+                            </div>
+                        </td>
+                        <td>
+                            {{ event.object.content|safe }}
+                        </td>
+                        <td>
+                            <a href="{{ event.object.url }}" class="btn btn-grey btn-sm event-more" target="_blank">Read More</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
