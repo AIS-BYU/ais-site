@@ -13,14 +13,49 @@
 {% endblock %}
 
 {% block body %}
-<!-- Services -->
+<!-- Sponorship cards -->
 <div class="section">
     <div class="container">
         <div class="row">
-            {% for sponsor in sponsors %}
+            <h1>Platinum Sponsors</h1>
+            {% for sponsor in platinum_sponsors %}
                 <div class="col-md-4 col-sm-6">
                     <div class="service-wrapper">
-                        <img class="sponsor-logo" src="/media/{{ sponsor.logo_image }}" alt="{{ sponsor.name }}">
+                        <img class="sponsor-logo {{ sponsor.sponsorship_level }}" src="/media/{{ sponsor.logo_image }}" alt="{{ sponsor.name }}">
+                        <h3>{{ sponsor.name }}</h3>
+                        <p>{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn">Read more</a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                    {# Bootstrap clear fix #}
+                    <div class="clearfix visible-md-block visible-sm-block"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            <h1>Gold Sponsors</h1>
+            {% for sponsor in gold_sponsors %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-wrapper">
+                        <img class="sponsor-logo {{ sponsor.sponsorship_level }}" src="/media/{{ sponsor.logo_image }}" alt="{{ sponsor.name }}">
+                        <h3>{{ sponsor.name }}</h3>
+                        <p>{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn">Read more</a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                    {# Bootstrap clear fix #}
+                    <div class="clearfix visible-md-block visible-sm-block"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            <h1>Silver Sponsors</h1>
+            {% for sponsor in silver_sponsors %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-wrapper">
+                        <img class="sponsor-logo {{ sponsor.sponsorship_level }}" src="/media/{{ sponsor.logo_image }}" alt="{{ sponsor.name }}">
                         <h3>{{ sponsor.name }}</h3>
                         <p>{{ sponsor.description }}</p>
                         <a href="{{ sponsor.website }}" target="_blank" class="btn">Read more</a>
