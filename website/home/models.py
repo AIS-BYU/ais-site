@@ -6,6 +6,7 @@ class Sponsor(models.Model):
     website = models.URLField()
     description = models.TextField(max_length=500, blank=True, null=True)
     logo_image = models.FileField(upload_to='sponsor/')
+    sponsorship_level = models.TextField(max_length=50)
 
     def __str__(self):
         return self.name
