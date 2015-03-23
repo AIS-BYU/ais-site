@@ -115,11 +115,27 @@ a:hover{
 	color: darken(@theme-color, 20%);
 }
 
+.sponsor-border(@color){
+  border: 5px solid @color;
+}
+
 .sponsor-logo {
   margin: auto;
-  border: 5px solid #FFF;
   border-radius: 100px;
+  border: 5px solid #fff;
   background-clip: padding-box;
-  box-shadow: 0px 1px #FFF inset, 0px 1px 2px #C8CFE6;
+  box-shadow: 0px 1px #FFF inset, 0 1px 2px #C8CFE6;
   max-height: 150px;
+}
+
+.platinum {
+  .sponsor-border(#E5E4E2);
+}
+
+.gold{
+  .sponsor-border(#FFD700)
+}
+
+.silver{
+  .sponsor-border(#C0C0C0)
 }
