@@ -43,21 +43,29 @@
                 <ul>
                     <li class="logo-wrapper">
                         <a href="/">
-                            <img src="{% static 'img/ais.png' %}" alt="Multipurpose Twitter Bootstrap Template">
+                            <img src="{% static 'img/ais.png' %}" alt="Association for Information Systems">
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="/">Home</a>
+                {% with url="/" %}
+                    <li class="{% if url == request.path %} active {% endif %}">
+                        <a href="{{ url }}">Home</a>
                     </li>
-                    <li>
-                        <a href="/about/">About</a>
+                {% endwith %}
+                {% with url="/about/" %}
+                    <li class="{% if url == request.path %} active {% endif %}">
+                        <a href="{{ url }}">About</a>
                     </li>
-                    <li>
-                        <a href="/sponsors/">Sponsors</a>
+                {% endwith %}
+                {% with url="/sponsors/" %}
+                    <li class="{% if url == request.path %} active {% endif %}">
+                        <a href="{{ url }}">Sponsors</a>
                     </li>
-                    <li>
-                        <a href="/calendar/">Calendar</a>
+                {% endwith %}
+                {% with url="/calendar/" %}
+                    <li class="{% if url == request.path %} active {% endif %}">
+                        <a href="{{ url }}">Calendar</a>
                     </li>
+                {% endwith %}
                     <li class="has-submenu">
                         <a href="#">Pages +</a>
                         <div class="mainmenu-submenu">
@@ -142,57 +150,6 @@
     {% endblock %}
 
     {% block body %}
-    <!-- Press Coverage -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="in-press press-wired">
-                        <a href="#">Morbi eleifend congue elit nec sagittis. Praesent aliquam lobortis tellus, nec consequat vitae</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="in-press press-mashable">
-                        <a href="#">Morbi eleifend congue elit nec sagittis. Praesent aliquam lobortis tellus, nec consequat vitae</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/BYUAIS" data-widget-id="578604479999700992">Tweets by @BYUAIS</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Press Coverage -->
-
-    <!-- Services -->
-    <div class="section">
-        <div class="container">
-
-        </div>
-    </div>
-    <!-- End Services -->
-
-    <!-- Call to Action Bar -->
-    <div class="section section-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="calltoaction-wrapper">
-                        <h3>Call to action</h3> <a href="" class="btn btn-orange">Join today!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Call to Action Bar -->
-
-    <!-- Our Clients -->
-    <div class="section">
-        <div class="container">
-        </div>
-    </div>
-    <!-- End Our Clients -->
     {% endblock %}
 
     {% block footer %}
