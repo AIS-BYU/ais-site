@@ -107,7 +107,7 @@ a {
 a:hover {
   color: #2f556d;
 }
-.row img {
+img.width-full {
   width: 100%;
 }
 .sponsor-logo {
