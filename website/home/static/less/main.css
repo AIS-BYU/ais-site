@@ -1393,15 +1393,13 @@ span.color-red {
   text-decoration: none;
 }
 .in-press a:after {
-  content: '';
   display: block;
   position: absolute;
-  bottom: -10px;
+  bottom: 20px;
   right: 20px;
-  width: 120px;
   height: 32px;
-  background-image: url(../img/in-press.png);
-  background-repeat: no-repeat;
+  content: "\201D";
+  font-size: 2.2em;
   -webkit-transition: .25s linear;
   -moz-transition: .25s linear;
   -o-transition: .25s linear;
@@ -1873,13 +1871,13 @@ span.color-red {
 +	Homepage Slider Style (modified sequencejs CSS). Sorry, no LESS here
 --------------------------------------------------------------------------*/
 #sequence {
+  position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 1920px;
   color: white;
   font-size: 0.625em;
-  margin: 0 auto 30px auto;
-  position: relative;
+  margin: 0 auto;
   height: 400px;
 }
 #sequence img {
@@ -1891,6 +1889,18 @@ span.color-red {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+#sequence > .sequence-canvas > li {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  -ms-transition-property: background;
+  transition-property: background;
+  background-position: -50px 0;
 }
 #sequence h2 {
   font-size: 4em;
@@ -1904,18 +1914,6 @@ span.color-red {
   font-size: 2em;
   color: #FFF;
   text-shadow: 2px 2px 3px #444;
-}
-#sequence > .sequence-canvas > li {
-  position: absolute;
-  width: 100%;
-  height: 400px;
-  z-index: 1;
-  -webkit-transition-property: background;
-  -moz-transition-property: background;
-  -o-transition-property: background;
-  -ms-transition-property: background;
-  transition-property: background;
-  background-position: -50px 0;
 }
 #sequence > .sequence-canvas > li.bg1 {
   background-image: url(../img/homepage-slider/slider-bg1.jpg);
@@ -2139,9 +2137,10 @@ span.color-red {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-.slide-img {
+.slide-img,
+.slide-btn {
   left: 90%;
-  top: 20%;
+  top: 80%;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -2150,8 +2149,9 @@ span.color-red {
   max-height: 450px !important;
   max-width: 45% !important;
 }
-.animate-in .slide-img {
-  left: 55%;
+.animate-in .slide-img,
+.animate-in .slide-btn {
+  left: 80%;
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
@@ -2160,8 +2160,9 @@ span.color-red {
   -o-transition-duration: 1s;
   transition-duration: 1s;
 }
-.animate-out .slide-img {
-  left: 15%;
+.animate-out .slide-img,
+.animate-out .slide-btn {
+  left: 90%;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -2202,16 +2203,20 @@ span.color-red {
   }
 }
 @media only screen and (max-width: 568px) {
-  .slide-img {
+  .slide-img,
+  .slide-btn {
+    top: 10%;
     left: 50%;
     width: auto;
     max-width: 80% !important;
   }
-  #sequence .animate-in .slide-img {
+  #sequence .animate-in .slide-img,
+  #sequence .animate-in .slide-btn {
     left: 50%;
     margin-left: -40%;
   }
-  #sequence .animate-out .slide-img {
+  #sequence .animate-out .slide-img,
+  #sequence .animate-out .slide-btn {
     left: 20%;
     margin-left: -20%;
   }
