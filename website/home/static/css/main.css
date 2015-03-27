@@ -2240,7 +2240,8 @@ span.color-red {
     left: -100%;
   }
   #sequence .subtitle {
-    visibility: hidden;
+    top: 80px;
+    width: 70%;
   }
 }
 /*--------------------------------------------------------------------------
@@ -2512,6 +2513,9 @@ span.color-red {
   .mainmenu {
     font-size: 120%;
     border: none;
+  }
+  .mainmenu li.logo-wrapper a {
+    padding: 0;
   }
   .mainmenu > ul,
   .mainmenu .mainmenu-submenu-inner {
