@@ -107,6 +107,9 @@ a {
 a:hover {
   color: #2f556d;
 }
+.row img {
+  width: 100%;
+}
 .sponsor-logo {
   margin: auto;
   border-radius: 100px;
