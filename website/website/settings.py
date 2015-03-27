@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ais.byu.edu']
 
 # The Production.py file is not committed to version control since it contains passwords and other secret information
 from website.production import *
@@ -53,18 +53,6 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-# Developement configuration - NOT PRD READY
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aisdata',
-        'USER': 'aisuser', #development user
-        'PASSWORD': 'a!sd4ta', #development password
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
