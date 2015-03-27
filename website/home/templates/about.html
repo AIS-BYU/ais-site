@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block breadcrumb %}
     <div class="section section-breadcrumbs">
@@ -17,19 +18,17 @@
     	<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
-						<h3>We are the leading club on campus</h3>
+						<h3>Who is AIS?</h3>
+						<p>The Association for Information Systems (AIS) serves society through the advancement of knowledge and the promotion of excellence in the practice and study of information systems. AIS is the premier professional association for individuals and organizations who lead the research, teaching, practice, and study of information systems worldwide.<br/>
+                            BYU founded a local student chapter of AIS in 1993 in order to further this mission through Information Systems graduates.
+                        </p>
+						<h3>Our Purpose </h3>
 						<p>
-							Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum diam suscipit id.
-						</p>
-						<h3>Come network, learn, and much more!</h3>
-						<p>
-							Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam condimentum laoreet sagittis. Duis quis ullamcorper leo. Suspendisse potenti.
-						</p>
+						    We serve our members by promoting and developing Information Systems-related skills, career exploration, and dynamic relationships with professionals, recruiters, and students.
+                        </p>
 					</div>
 					<div class="col-sm-6">
-						<div class="video-wrapper">
-							<iframe src="http://player.vimeo.com/video/47000322?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-						</div>
+                        <img src="{% static 'img/Class-11.jpg' %} "/>
 					</div>
 				</div>
 			</div>
