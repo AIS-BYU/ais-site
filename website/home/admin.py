@@ -23,3 +23,5 @@ class SponsorAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Sponsor, SponsorAdmin)
+
+admin.site.register(SiteUser)
