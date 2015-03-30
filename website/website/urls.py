@@ -5,16 +5,15 @@ from django.conf.urls.static import static
 from django.http import HttpResponseRedirect
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'website.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^$', 'home.views.index'),
     url(r'^about/', 'home.views.about'),
     url(r'^sponsors/', 'home.views.sponsors'),
     url(r'^calendar/', 'home.views.calendar'),
     url(r'^events/', 'home.views.events'),
     url(r'^favicon.ico$', lambda x: HttpResponseRedirect(settings.MEDIA_URL+'/favicon.ico')), #google chrome favicon fix
+    # CAS (see django_cas_ng)
+    url(r'^login/', 'django_cas_ng.views.login'),
+    url(r'^logout/', 'django_cas_ng.views.logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.MEDIA_ROOT,

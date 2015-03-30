@@ -24,6 +24,24 @@ ALLOWED_HOSTS = ['ais.byu.edu']
 # The Production.py file is not committed to version control since it contains passwords and other secret information
 from website.production import *
 
+
+# CAS Authentication at BYU
+AUTHENTICATION_BACKENDS = (
+    'django_cas_ng.backends.CASBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# after the django_cas_ng modules authenticates a user and creates a stub User object (if needed),
+# it sends the 'cas_user_authenticated' signal, which we handle in homepage/views/__init__.py
+# that's where we finalize the user information from the BYU cas system
+# NOTE THAT when testing, BYU doesn't send the extended attributes (to localhost).
+
+CAS_SERVER_URL = 'https://cas.byu.edu/cas/login'
+CAS_REDIRECT_URL = 'https://ais.byu.edu/'
+CAS_VERSION = '3'
+
+AUTH_USER_MODEL = 'home.SiteUser'
+
 # Application definition
 
 INSTALLED_APPS = (
