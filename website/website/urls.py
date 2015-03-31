@@ -9,8 +9,10 @@ urlpatterns = patterns('',
     url(r'^about/', 'home.views.about'),
     url(r'^sponsors/', 'home.views.sponsors'),
     url(r'^calendar/', 'home.views.calendar'),
-    url(r'^events/', 'home.views.events'),
-    url(r'^favicon.ico$', lambda x: HttpResponseRedirect(settings.MEDIA_URL+'/favicon.ico')), #google chrome favicon fix
+    url(r'^events/$', 'home.views.events'),
+    url(r'^events/admin', 'home.views.event_admin'),
+    #google chrome favicon fix; https://gist.github.com/iepathos/5350503
+    url(r'^favicon.ico$', lambda x: HttpResponseRedirect(settings.STATIC_URL+'favicon.ico')),
     # CAS (see django_cas_ng)
     url(r'^login/', 'django_cas_ng.views.login'),
     url(r'^logout/', 'django_cas_ng.views.logout'),

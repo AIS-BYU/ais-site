@@ -37,7 +37,7 @@ AUTHENTICATION_BACKENDS = (
 # NOTE THAT when testing, BYU doesn't send the extended attributes (to localhost).
 
 CAS_SERVER_URL = 'https://cas.byu.edu/cas/login'
-CAS_REDIRECT_URL = 'https://ais.byu.edu/'
+CAS_REDIRECT_URL = 'http://ais.byu.edu/'
 CAS_VERSION = '3'
 
 AUTH_USER_MODEL = 'home.SiteUser'
