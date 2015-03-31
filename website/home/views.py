@@ -4,6 +4,7 @@ from django.conf import settings
 from home.models import *
 import requests
 import json
+from django.contrib.auth.decorators import login_required
 from website.settings import GOOGLE_PLUS_KEY
 
 # Create your views here.
@@ -37,3 +38,9 @@ def events(request):
     r = requests.get('https://www.googleapis.com/plus/v1/people/111490187039594096525/activities/public?key={0}&maxResults=10'.format( GOOGLE_PLUS_KEY ))
 
     return render_to_response('events.html', {'events': r.json(), 'request': request})
+
+@login_required(login_url='/login/')
+def event_admin(request):
+    print("USER:  ", request.user)
+
+    return render_to_response('event_admin.html', {})
