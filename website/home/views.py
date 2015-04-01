@@ -7,6 +7,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from website.settings import GOOGLE_PLUS_KEY
 
+
 # Create your views here.
 def index(request):
     r = requests.get('https://www.googleapis.com/plus/v1/people/111490187039594096525/activities/public?key={0}&maxResults=3'.format( GOOGLE_PLUS_KEY ))
@@ -44,3 +45,7 @@ def event_admin(request):
     print("USER:  ", request.user)
 
     return render_to_response('event_admin.html', {})
+
+def officers(request):
+    users = SiteUser.objects.all()
+    return render_to_response('officers.html', {'users': users})

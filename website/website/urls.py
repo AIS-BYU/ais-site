@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^about/', 'home.views.about'),
     url(r'^sponsors/', 'home.views.sponsors'),
     url(r'^calendar/', 'home.views.calendar'),
+    url(r'^officers/', 'home.views.officers'),
     url(r'^events/$', 'home.views.events'),
     url(r'^events/admin', 'home.views.event_admin'),
     #google chrome favicon fix; https://gist.github.com/iepathos/5350503
