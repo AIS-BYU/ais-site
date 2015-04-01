@@ -30,3 +30,7 @@ class AisEvent(models.Model):
     sponsor  = models.ForeignKey(Sponsor)
     start    = models.DateTimeField()
     end      = models.DateTimeField()
+
+class AisOfficer(models.Model):
+    user = models.ForeignKey(SiteUser)
+    title = models.TextField()
