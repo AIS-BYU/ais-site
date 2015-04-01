@@ -2469,33 +2469,46 @@ span.color-red {
   color: 0 5px 5px rgba(0,0,0,0.4);
 }
 .mainmenu .mainmenu-submenu-inner > div {
-  width: 33%;
+  width: 100%;
   float: left;
+}
+.mainmenu .mainmenu-submenu-inner ul {
+  text-align: center;
+}
+.mainmenu .mainmenu-submenu-inner ul > li {
+  display: inline-block;
+  padding: 5px 15px;
+}
+.mainmenu .mainmenu-submenu-inner ul > li:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.mainmenu .mainmenu-submenu-inner ul > li > a {
+  text-decoration: none;
 }
 .mainmenu .mainmenu-submenu-inner:before,
 .mainmenu .mainmenu-submenu-inner:after {
   content: " ";
   display: table;
 }
-.mainmenu .mainmenu-submenu-inner:after {
-  clear: both;
-}
 .mainmenu .mainmenu-submenu-inner > div a {
   color: #fff;
   line-height: 2em;
+}
+.mainmenu .mainmenu-submenu-inner:after {
+  clear: both;
 }
 .mainmenu-open .mainmenu-submenu {
   display: block;
   padding-bottom: 3em;
 }
-.mainmenu-submenu h4 {
+.mainmenu-open .mainmenu-submenu h4 {
   color: #bad2e1;
   padding: 1em 0 0.6em;
   margin-left: 20px;
   font-size: 160%;
   font-weight: 300;
 }
-.mainmenu-submenu ul {
+.mainmenu-open .mainmenu-submenu ul {
   margin-left: 20px;
 }
 @media screen and (max-width: 979px) {
