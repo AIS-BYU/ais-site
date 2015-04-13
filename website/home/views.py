@@ -46,8 +46,11 @@ def event_admin(request):
     return render_to_response('event_admin.html', {})
 
 def officers(request):
-    users = AisOfficer.objects.all()
+    users = []
     return render_to_response('officers.html', {'users': users})
 
 def wais(request):
     return render_to_response('wais.html')
+
+def error500(request):
+    return render_to_response('500.html')

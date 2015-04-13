@@ -23,3 +23,5 @@ urlpatterns = patterns('',
         'document_root': settings.MEDIA_ROOT,
     }),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler500 = 'home.views.error500'
