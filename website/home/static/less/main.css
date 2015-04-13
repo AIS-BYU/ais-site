@@ -1,9 +1,22 @@
 /*--------------------------------------------------------------------------
 	General Style
 --------------------------------------------------------------------------*/
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   background: url(../img/page-background.png);
   background-attachment: fixed;
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 120px;
 }
 .logo-wrapper img {
   max-height: 50px;

@@ -2,10 +2,24 @@
 /*--------------------------------------------------------------------------
 	General Style
 --------------------------------------------------------------------------*/
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body{
   background: @body-background;
   background-attachment: fixed;
+    /* Margin bottom by footer height */
+  margin-bottom: @footer-height;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: @footer-height;
 }
 
 .logo-wrapper img {
