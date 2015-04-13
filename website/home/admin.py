@@ -22,6 +22,7 @@ class SponsorAdmin(admin.ModelAdmin):
     form = SponsorForm
 
 # Register your models here.
+admin.site.register( AisOfficer )
 admin.site.register( Sponsor, SponsorAdmin )
 admin.site.register( SiteUser )
 admin.site.register( AisEvent )

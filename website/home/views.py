@@ -46,7 +46,7 @@ def event_admin(request):
     return render_to_response('event_admin.html', {})
 
 def officers(request):
-    users = SiteUser.objects.all().filter(is_staff=True)
+    users = AisOfficer.objects.all()
     return render_to_response('officers.html', {'users': users})
 
 def wais(request):
