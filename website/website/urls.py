@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^officers/', 'home.views.officers'),
     url(r'^wais/', 'home.views.wais'),
     url(r'^events/$', 'home.views.events'),
+    url(r'^twitter/$', 'home.views.twitter'),
     url(r'^events/admin', 'home.views.event_admin'),
     #google chrome favicon fix; https://gist.github.com/iepathos/5350503
     url(r'^favicon.ico$', lambda x: HttpResponseRedirect(settings.STATIC_URL+'favicon.ico')),

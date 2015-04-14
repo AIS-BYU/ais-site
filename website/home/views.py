@@ -52,5 +52,8 @@ def officers(request):
 def wais(request):
     return render_to_response('wais.html')
 
+def twitter(request):
+    return render(request, 'twitter.html')
+
 def error500(request):
     return render_to_response('500.html')
