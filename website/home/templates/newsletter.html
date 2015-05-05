@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Newsletter</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {% if newsletter_file %}
+                    {% include newsletter_file %}
+
+                {% else %}
+                    <h2>Available Newsletters</h2>
+                    <a href="/newsletter/2015-05/">2015-05 Newsletter</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

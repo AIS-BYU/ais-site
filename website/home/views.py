@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.conf import settings
 from home.models import *
 import requests
+import os
 import json
 from django.contrib.auth.decorators import login_required
 from website.settings import GOOGLE_PLUS_KEY
@@ -54,6 +55,14 @@ def wais(request):
 
 def twitter(request):
     return render(request, 'twitter.html')
+
+def newsletter_home(request):
+    return render(request, 'newsletter.html')
+
+def newsletter(request, id):
+    nid = 'newsletters/{0}.html'.format(id)
+    return render( request, 'newsletter.html', {'newsletter_file': nid})
+
 
 def error500(request):
     return render_to_response('500.html')
